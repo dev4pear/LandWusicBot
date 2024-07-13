@@ -1,0 +1,15 @@
+telethon==1.24.0
+py-tgcalls==0.9.7
+requests
+pillow
+aiofile
+yt-dlp
+aiofiles
+youtube-search-python
+speedtest-cli
+numpy
+flask
+flask_restful
+pyrogram
+termcolor
+pyfiglet

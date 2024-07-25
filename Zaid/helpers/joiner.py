@@ -25,6 +25,11 @@ def AssistantAdd(mystic):
         try:
             groupID = event.original_update.message.peer_id.channel_id
             permissions = await event.client.get_permissions(int(groupID), int(ASSISTANT_ID))
+            if permissions.is_banned:
+                await event.reply(
+                    f"__Assistant Failed To Join__\n\n**Reason**: Assistant is banned in this chat."
+                )
+                return
         except UserNotParticipantError:
             if event.is_group:
                 try:

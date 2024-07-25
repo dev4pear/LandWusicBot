@@ -75,9 +75,6 @@ def ytsearch(query: str):
 
 async def ytdl(format: str, link: str):
     stdout, stderr = await bash(f'yt-dlp -g -f "{format}" {link}')
-    
-    print('****************', stdout)
-    print('--------------', stderr)
     if stdout:
         return 1, stdout.split("\n")[0]
     return 0, stderr
@@ -190,7 +187,7 @@ async def play(event):
                 await botman.edit(f"`{ytlink}`")
             elif chat_id in QUEUE:
                 pos = add_to_queue(chat_id, songname, ytlink, url, "Audio", 0)
-                caption = f"✨ **ᴀᴅᴅᴇᴅ ᴛᴏ ǫᴜᴇᴜᴇ ᴀᴛ** {pos}\n\n❄ **TITLE :** [{songname}]({url})\n📀 **DURATION :** {duration} MINUTES\n🎤 **REQUESTED BY :** {from_user} \n Powered By [Tommy](https://t.me/tcoledev)"
+                caption = f"✨ **ᴀᴅᴅᴇᴅ ᴛᴏ ǫᴜᴇᴜᴇ ᴀᴛ** {pos}\n\n🔊 **TITLE :** [{songname}]({url})\n📀 **DURATION :** {duration} MINUTES\n🎤 **REQUESTED BY :** {from_user} \n Powered By [Tommy](https://t.me/tcoledev)"
                 await botman.delete()
                 await event.client.send_file(chat_id, thumb, caption=caption, buttons=btnn)
             else:
@@ -220,7 +217,7 @@ async def play(event):
             songname = "Voice Note"
         if chat_id in QUEUE:
             pos = add_to_queue(chat_id, songname, dl, link, "Audio", 0)
-            caption = f"✨ **ᴀᴅᴅᴇᴅ ᴛᴏ ǫᴜᴇᴜᴇ ᴀᴛ** {pos}\n\n❄ **TITLE :** [{songname}]({url})\n🎤 **REQUESTED BY :** {from_user} \n Powered By [Tommy](https://t.me/tcoledev)"
+            caption = f"✨ **ᴀᴅᴅᴇᴅ ᴛᴏ ǫᴜᴇᴜᴇ ᴀᴛ** {pos}\n\n🔊 **TITLE :** [{songname}]({url})\n🎤 **REQUESTED BY :** {from_user} \n Powered By [Tommy](https://t.me/tcoledev)"
             await event.client.send_file(chat_id, ngantri, caption=caption, buttons=btnn)
             await botman.delete()
         else:
@@ -314,7 +311,7 @@ async def vplay(event):
             elif chat_id in QUEUE:
                 pos = add_to_queue(
                     chat_id, songname, ytlink, url, "Video", RESOLUSI)
-                caption = f"**✨ ᴀᴅᴅᴇᴅ ᴛᴏ ǫᴜᴇᴜᴇ ᴀᴛ** {pos}\n\n❄ **TITLE :** [{songname}]({url})\n📀 **DURATION :** {duration} MINUTES\n🎤 **REQUESTED BY :** {from_user} \n Powered By [Tommy](https://t.me/tcoledev)"
+                caption = f"**✨ ᴀᴅᴅᴇᴅ ᴛᴏ ǫᴜᴇᴜᴇ ᴀᴛ** {pos}\n\n🔊 **TITLE :** [{songname}]({url})\n📀 **DURATION :** {duration} MINUTES\n🎤 **REQUESTED BY :** {from_user} \n Powered By [Tommy](https://t.me/tcoledev)"
                 await xnxx.delete()
                 await event.client.send_file(chat_id, thumb, caption=caption, buttons=btnn)
             else:
@@ -353,7 +350,7 @@ async def vplay(event):
             songname = "Telegram Video Player"
         if chat_id in QUEUE:
             pos = add_to_queue(chat_id, songname, dl, link, "Video", RESOLUSI)
-            caption = f"**✨ ᴀᴅᴅᴇᴅ ᴛᴏ ǫᴜᴇᴜᴇ ᴀᴛ** {pos}\n\n❄ **TITLE :** [{songname}]({url})\n🎤 **REQUESTED BY :** {from_user} \n Powered By [Tommy](https://t.me/tcoledev)"
+            caption = f"**✨ ᴀᴅᴅᴇᴅ ᴛᴏ ǫᴜᴇᴜᴇ ᴀᴛ** {pos}\n\n🔊 **TITLE :** [{songname}]({url})\n🎤 **REQUESTED BY :** {from_user} \n Powered By [Tommy](https://t.me/tcoledev)"
             await event.client.send_file(chat_id, ngantri, caption=caption, buttons=btnn)
             await xnxx.delete()
         else:
@@ -400,7 +397,7 @@ async def vplay(event):
             elif chat_id in QUEUE:
                 pos = add_to_queue(
                     chat_id, songname, ytlink, url, "Video", RESOLUSI)
-                caption = f"**✨ ᴀᴅᴅᴇᴅ ᴛᴏ ǫᴜᴇᴜᴇ ᴀᴛ** {pos}\n\n❄ **TITLE :** [{songname}]({url})\n📀 **DURATION :** {duration} MINUTES\n🎤 **REQUESTED BY :** {from_user} \n Powered By [Tommy](https://t.me/tcoledev)"
+                caption = f"**✨ ᴀᴅᴅᴇᴅ ᴛᴏ ǫᴜᴇᴜᴇ ᴀᴛ** {pos}\n\n🔊 **TITLE :** [{songname}]({url})\n📀 **DURATION :** {duration} MINUTES\n🎤 **REQUESTED BY :** {from_user} \n Powered By [Tommy](https://t.me/tcoledev)"
                 await xnxx.delete()
                 await event.client.send_file(chat_id, thumb, caption=caption, buttons=btnn)
             else:

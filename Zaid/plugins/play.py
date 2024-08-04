@@ -529,16 +529,6 @@ async def vc_resume(event, perm):
     else:
         await event.reply("**Nothing Is Streaming**")
 
-@Zaid.on(events.NewMessage(pattern="^[?!/]davidstats"))
-@is_owner
-async def vc_groupstats(event):
-    file = open('group.txt', 'r+')
-    group_count = int(file.read())
-    await event.reply(
-        f"Joined group count : {group_count}",
-        link_preview=False,
-    )
-            
 @call_py.on_stream_end()
 async def stream_end_handler(_, u: Update):
     chat_id = u.chat_id

@@ -19,7 +19,7 @@ async def start(event):
              caption=PM_START_TEXT.format(event.sender.first_name), 
              buttons=[
         [Button.url("✨ Add me in your group", f"https://t.me/LandWusicBot?startgroup=new&admin=post_messages+delete_messages+edit_messages+pin_messages+change_info+invite_users+promote_members+manage_video_chats+restrict_members")],
-        [Button.url("Support",f"https://t.me/tcoledev")],
+        [Button.url("Support",f"https://t.me/tcoledev1")],
         [Button.inline("Help", data="help")]])
        return
 
@@ -36,6 +36,6 @@ async def _(event):
     if event.is_private:
        await event.edit(PM_START_TEXT.format(event.sender.first_name), buttons=[
         [Button.url("✨ Add me in your group", f"https://t.me/{BOT_USERNAME}?startgroup=true")],
-        [Button.url("Support",f"https://t.me/tcoledev")],
+        [Button.url("Support",f"https://t.me/tcoledev1")],
         [Button.inline("Help", data="help")]])
        return

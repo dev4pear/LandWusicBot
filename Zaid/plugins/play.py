@@ -151,7 +151,7 @@ async def play(event):
     from_user = vcmention(event.sender) 
     public = event.chat_id
 
-    if event.text[5:] == '@NORMUS_MusicBOT' :
+    if event.text[5:] == '@LandWusicBot' :
         return await event.client.send_file(chat_id, Config.CMD_IMG, caption="**Give Me Your Query Which You want to Play**\n\n **Example**: `/play Nira Ishq Bass boosted`", buttons=btnn)
     if (
         replied
@@ -187,7 +187,7 @@ async def play(event):
                 await botman.edit(f"`{ytlink}`")
             elif chat_id in QUEUE:
                 pos = add_to_queue(chat_id, songname, ytlink, url, "Audio", 0)
-                caption = f"✨ **ᴀᴅᴅᴇᴅ ᴛᴏ ǫᴜᴇᴜᴇ ᴀᴛ** {pos}\n\n🔊 **TITLE :** [{songname}]({url})\n📀 **DURATION :** {duration} MINUTES\n🎤 **REQUESTED BY :** {from_user} \n Powered By [Tommy](https://t.me/tcoledev)"
+                caption = f"✨ **ᴀᴅᴅᴇᴅ ᴛᴏ ǫᴜᴇᴜᴇ ᴀᴛ** {pos}\n\n🔊 **TITLE :** [{songname}]({url})\n📀 **DURATION :** {duration} MINUTES\n🎤 **REQUESTED BY :** {from_user} \n Powered By [Tommy](https://t.me/tcoledev1)"
                 await botman.delete()
                 await event.client.send_file(chat_id, thumb, caption=caption, buttons=btnn)
             else:
@@ -200,7 +200,7 @@ async def play(event):
                         stream_type=StreamType().pulse_stream,
                     )
                     add_to_queue(chat_id, songname, ytlink, url, "Audio", 0)
-                    caption = f"➻ **STARTED STREAMING**\n\n🔊 **TITLE :** [{songname}]({url})\n📀 **DURATION :** {duration} MINUTES\n🎤 **REQUESTED BY :** {from_user} \n\n Powered By [Tommy](https://t.me/tcoledev)"
+                    caption = f"➻ **STARTED STREAMING**\n\n🔊 **TITLE :** [{songname}]({url})\n📀 **DURATION :** {duration} MINUTES\n🎤 **REQUESTED BY :** {from_user} \n\n Powered By [Tommy](https://t.me/tcoledev1)"
                     await botman.delete()
                     await event.client.send_file(chat_id, thumb, caption=caption, buttons=btnn)
                 except Exception as ep:
@@ -217,7 +217,7 @@ async def play(event):
             songname = "Voice Note"
         if chat_id in QUEUE:
             pos = add_to_queue(chat_id, songname, dl, link, "Audio", 0)
-            caption = f"✨ **ᴀᴅᴅᴇᴅ ᴛᴏ ǫᴜᴇᴜᴇ ᴀᴛ** {pos}\n\n🔊 **TITLE :** [{songname}]({url})\n🎤 **REQUESTED BY :** {from_user} \n Powered By [Tommy](https://t.me/tcoledev)"
+            caption = f"✨ **ᴀᴅᴅᴇᴅ ᴛᴏ ǫᴜᴇᴜᴇ ᴀᴛ** {pos}\n\n🔊 **TITLE :** [{songname}]({url})\n🎤 **REQUESTED BY :** {from_user} \n Powered By [Tommy](https://t.me/tcoledev1)"
             await event.client.send_file(chat_id, ngantri, caption=caption, buttons=btnn)
             await botman.delete()
         else:
@@ -230,7 +230,7 @@ async def play(event):
                     stream_type=StreamType().pulse_stream,
                 )
                 add_to_queue(chat_id, songname, dl, link, "Audio", 0)
-                caption = f"➻ **STARTED STREAMING**\n\n🔊 **TITLE :** [{songname}]({link})\n🎤 **REQUESTED BY :** {from_user} \n Powered By [Tommy](https://t.me/tcoledev)"
+                caption = f"➻ **STARTED STREAMING**\n\n🔊 **TITLE :** [{songname}]({link})\n🎤 **REQUESTED BY :** {from_user} \n Powered By [Tommy](https://t.me/tcoledev1)"
                 await event.client.send_file(chat_id, fotoplay, caption=caption, buttons=btnn)
                 await botman.delete()
             except Exception as ep:
@@ -311,7 +311,7 @@ async def vplay(event):
             elif chat_id in QUEUE:
                 pos = add_to_queue(
                     chat_id, songname, ytlink, url, "Video", RESOLUSI)
-                caption = f"**✨ ᴀᴅᴅᴇᴅ ᴛᴏ ǫᴜᴇᴜᴇ ᴀᴛ** {pos}\n\n🔊 **TITLE :** [{songname}]({url})\n📀 **DURATION :** {duration} MINUTES\n🎤 **REQUESTED BY :** {from_user} \n Powered By [Tommy](https://t.me/tcoledev)"
+                caption = f"**✨ ᴀᴅᴅᴇᴅ ᴛᴏ ǫᴜᴇᴜᴇ ᴀᴛ** {pos}\n\n🔊 **TITLE :** [{songname}]({url})\n📀 **DURATION :** {duration} MINUTES\n🎤 **REQUESTED BY :** {from_user} \n Powered By [Tommy](https://t.me/tcoledev1)"
                 await xnxx.delete()
                 await event.client.send_file(chat_id, thumb, caption=caption, buttons=btnn)
             else:
@@ -330,7 +330,7 @@ async def vplay(event):
                         RESOLUSI)
                     await xnxx.delete()
                     await event.client.send_file(event.chat_id,
-                        f"➻ **STARTED STREAMING**\n\n🔊 **TITLE :** [{songname}]({url})\n📀 **DURATION :** {duration} MINUTES\n🎤 **REQUESTED BY :** {from_user} \n Powered By [Tommy](https://t.me/tcoledev)", buttons=btnn,
+                        f"➻ **STARTED STREAMING**\n\n🔊 **TITLE :** [{songname}]({url})\n📀 **DURATION :** {duration} MINUTES\n🎤 **REQUESTED BY :** {from_user} \n Powered By [Tommy](https://t.me/tcoledev1)", buttons=btnn,
                         link_preview=False,
                     )
                 except Exception as ep:
@@ -350,7 +350,7 @@ async def vplay(event):
             songname = "Telegram Video Player"
         if chat_id in QUEUE:
             pos = add_to_queue(chat_id, songname, dl, link, "Video", RESOLUSI)
-            caption = f"**✨ ᴀᴅᴅᴇᴅ ᴛᴏ ǫᴜᴇᴜᴇ ᴀᴛ** {pos}\n\n🔊 **TITLE :** [{songname}]({url})\n🎤 **REQUESTED BY :** {from_user} \n Powered By [Tommy](https://t.me/tcoledev)"
+            caption = f"**✨ ᴀᴅᴅᴇᴅ ᴛᴏ ǫᴜᴇᴜᴇ ᴀᴛ** {pos}\n\n🔊 **TITLE :** [{songname}]({url})\n🎤 **REQUESTED BY :** {from_user} \n Powered By [Tommy](https://t.me/tcoledev1)"
             await event.client.send_file(chat_id, ngantri, caption=caption, buttons=btnn)
             await xnxx.delete()
         else:
@@ -367,7 +367,7 @@ async def vplay(event):
                     stream_type=StreamType().pulse_stream,
                 )
                 add_to_queue(chat_id, songname, dl, link, "Video", RESOLUSI)
-                caption = f"➻ **STARTED STREAMING**\n\n✨ **TITLE :** [{songname}]({link})\n🎤 **REQUESTED BY :** {from_user} \n Powered By [Tommy](https://t.me/tcoledev)"
+                caption = f"➻ **STARTED STREAMING**\n\n✨ **TITLE :** [{songname}]({link})\n🎤 **REQUESTED BY :** {from_user} \n Powered By [Tommy](https://t.me/tcoledev1)"
                 await xnxx.delete()
                 await event.client.send_file(chat_id, fotoplay, caption=caption, buttons=btnn)
             except Exception as ep:
@@ -397,7 +397,7 @@ async def vplay(event):
             elif chat_id in QUEUE:
                 pos = add_to_queue(
                     chat_id, songname, ytlink, url, "Video", RESOLUSI)
-                caption = f"**✨ ᴀᴅᴅᴇᴅ ᴛᴏ ǫᴜᴇᴜᴇ ᴀᴛ** {pos}\n\n🔊 **TITLE :** [{songname}]({url})\n📀 **DURATION :** {duration} MINUTES\n🎤 **REQUESTED BY :** {from_user} \n Powered By [Tommy](https://t.me/tcoledev)"
+                caption = f"**✨ ᴀᴅᴅᴇᴅ ᴛᴏ ǫᴜᴇᴜᴇ ᴀᴛ** {pos}\n\n🔊 **TITLE :** [{songname}]({url})\n📀 **DURATION :** {duration} MINUTES\n🎤 **REQUESTED BY :** {from_user} \n Powered By [Tommy](https://t.me/tcoledev1)"
                 await xnxx.delete()
                 await event.client.send_file(chat_id, thumb, caption=caption, buttons=btnn)
             else:
@@ -414,7 +414,7 @@ async def vplay(event):
                         url,
                         "Video",
                         RESOLUSI)
-                    caption = f"➻ **STARTED STREAMING**\n\n✨ **TITLE :** [{songname}]({url})\n📀 **DURATION :** {duration} MINUTES\n🎤 **REQUESTED BY :** {from_user} \n Powered By [Tommy](https://t.me/tcoledev)"
+                    caption = f"➻ **STARTED STREAMING**\n\n✨ **TITLE :** [{songname}]({url})\n📀 **DURATION :** {duration} MINUTES\n🎤 **REQUESTED BY :** {from_user} \n Powered By [Tommy](https://t.me/tcoledev1)"
                     await xnxx.delete()
                     await event.client.send_file(chat_id, thumb, caption=caption, buttons=btnn)
                 except Exception as ep:

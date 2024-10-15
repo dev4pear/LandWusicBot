@@ -19,11 +19,19 @@ from telethon.tl.functions.messages import ImportChatInviteRequest
 from telethon.tl.functions.channels import LeaveChannelRequest
 from telethon.tl.functions.messages import ImportChatInviteRequest
 from telethon.tl.functions.messages import ExportChatInviteRequest
+from telethon import utils
 
 def AssistantAdd(mystic):
     async def wrapper(event):
         try:
             groupID = event.original_update.message.peer_id.channel_id
+            print(groupID)
+            permissions = await event.client.get_permissions(int(groupID), int(ASSISTANT_ID))
+            if permissions.is_banned:
+                await event.reply(
+                    f"__Assistant Failed To Join__\n\n**Reason**: Assistant is banned in this chat."
+                )
+                return
         except UserNotParticipantError:
             if event.is_group:
                 try:
@@ -36,6 +44,9 @@ def AssistantAdd(mystic):
                     await event.reply(
                         f"Joined Successfully",
                     )
+                    print(invitelink)
+                    ttt = utils.resolve_invite_link(invitelink)
+                    print(ttt)
                     file = open('group.txt', 'r+')
                     group_count = int(file.read())
                     group_count = group_count + 1
@@ -44,12 +55,6 @@ def AssistantAdd(mystic):
                 except UserAlreadyParticipantError:
                     pass
                 except Exception as e:
-                    permissions = await event.client.get_permissions(int(groupID), int(ASSISTANT_ID))
-                    if permissions.is_banned:
-                        await event.reply(
-                            f"__Assistant Failed To Join__\n\n**Reason**: Assistant is banned in this chat."
-                        )
-                        return
                     await event.reply(
                         f"__Assistant Failed To Join__\n\n**Reason**: {e}"
                     )
